@@ -1,6 +1,9 @@
 omniauth-venmo
 ==============
 
+[![Gem Version](https://badge.fury.io/rb/omniauth-venmo.png)](http://badge.fury.io/rb/omniauth-venmo)
+[![Build Status](https://travis-ci.org/tmilewski/omniauth-venmo.png?branch=master)](https://travis-ci.org/tmilewski/omniauth-venmo)
+
 Venmo OAuth2 Strategy for OmniAuth 1.x and supports the OAuth 2.0 server-side flow.
 
 *Venmo API docs are currently in the works and will be released upon completion.*
