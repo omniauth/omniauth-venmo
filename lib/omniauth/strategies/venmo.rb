@@ -1,7 +1,5 @@
 require 'omniauth-oauth2'
 
-# access_feed, access_profile, access_friends, make_payments
-
 module OmniAuth
   module Strategies
     class Venmo < OmniAuth::Strategies::OAuth2
@@ -27,7 +25,7 @@ module OmniAuth
           'image'       => raw_info['picture'],
           'balance'     => raw_info['balance'],
           'urls'        => {
-            'profile'   => nil # TODO: Fill in when Venmo is back online.
+            'profile'   => "https://venmo.com/#{raw_info['username']}"
           }
         })
       end
