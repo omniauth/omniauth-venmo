@@ -14,7 +14,7 @@ describe OmniAuth::Strategies::Venmo do
     end
 
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://api.venmo.com')
+      expect(subject.options.client_options.site).to eq('https://api.venmo.com/v1')
     end
 
     it 'should have correct authorize url' do
