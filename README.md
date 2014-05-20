@@ -6,7 +6,7 @@ omniauth-venmo
 
 Venmo OAuth2 Strategy for OmniAuth 1.x and supports the OAuth 2.0 server-side flow.
 
-*Venmo API docs are currently in the works and will be released upon completion.*
+You may view the Venmo API documentation [here](https://developer.venmo.com/docs/oauth).
 
 ## Installation
 
@@ -35,7 +35,7 @@ end
 
 Currently, there is only one configuration option that needs to be set:
 
-* `scope`: A comma-separated list of permissions you want to request from the user. The available permissions are as follows: `access_feed`, `access_profile`, `access_friends`, and `make_payments`.  Default: `access_profile`
+* `scope`: A comma-separated list of permissions you want to request from the user. The available permissions are as follows: `access_email`, `access_phone`, `access_balance`, `access_feed`, `access_profile`, `access_friends`, and `make_payments`.  Default: `access_profile`
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
