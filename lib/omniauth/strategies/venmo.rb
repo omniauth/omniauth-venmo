@@ -6,16 +6,14 @@ module OmniAuth
       DEFAULT_SCOPE = 'access_profile'
 
       option :provider_ignores_state, true
-      option :client_options, {
-        :site               => 'https://api.venmo.com/v1',
-        :authorize_url      => '/oauth/authorize',
-        :token_url          => '/oauth/access_token'
-      }
+      option :client_options, :site          => 'https://api.venmo.com/v1',
+                              :authorize_url => '/oauth/authorize',
+                              :token_url     => '/oauth/access_token'
 
       uid { raw_info['id'] }
 
       info do
-        prune!({
+        prune!(
           'username'    => raw_info['username'],
           'email'       => raw_info['email'],
           'phone'       => raw_info['phone'],
@@ -27,7 +25,7 @@ module OmniAuth
           'urls'        => {
             'profile'   => "https://venmo.com/#{raw_info['username']}"
           }
-        })
+        )
       end
 
       extra do
@@ -50,7 +48,7 @@ module OmniAuth
         super
       end
 
-      private
+    private
 
       def prune!(hash)
         hash.delete_if do |_, value|

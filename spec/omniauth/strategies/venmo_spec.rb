@@ -8,9 +8,9 @@ describe OmniAuth::Strategies::Venmo do
     end
   end
 
-  context "client options" do
+  context 'client options' do
     it 'should have correct name' do
-      expect(subject.options.name).to eq("venmo")
+      expect(subject.options.name).to eq('venmo')
     end
 
     it 'should have correct site' do
@@ -30,37 +30,37 @@ describe OmniAuth::Strategies::Venmo do
     end
   end
 
-  context "#prune!" do
-    it "should remove nil values" do
+  context '#prune!' do
+    it 'should remove nil values' do
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => nil })
-      ).to eq({ "a" => "b" })
+        subject.send(:prune!, 'a' => 'b', 'c' => nil)
+      ).to eq('a' => 'b')
     end
 
-    it "should remove empty values" do
+    it 'should remove empty values' do
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => "" })
-      ).to eq({ "a" => "b" })
+        subject.send(:prune!, 'a' => 'b', 'c' => '')
+      ).to eq('a' => 'b')
     end
 
-    it "should remove nil values recursively" do
+    it 'should remove nil values recursively' do
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => { "d" => nil} })
-      ).to eq({ "a" => "b" })
+        subject.send(:prune!, 'a' => 'b', 'c' => {'d' => nil})
+      ).to eq('a' => 'b')
 
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => { "d" => nil, "e" => "f"} })
-      ).to eq({ "a" => "b", "c" => {"e" => "f"} })
+        subject.send(:prune!, 'a' => 'b', 'c' => {'d' => nil, 'e' => 'f'})
+      ).to eq('a' => 'b', 'c' => {'e' => 'f'})
     end
 
-    it "should remove empty values recursively" do
+    it 'should remove empty values recursively' do
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => { "d" => ""} })
-      ).to eq({ "a" => "b" })
+        subject.send(:prune!, 'a' => 'b', 'c' => {'d' => ''})
+      ).to eq('a' => 'b')
 
       expect(
-        subject.send(:prune!, { "a" => "b", "c" => { "d" => "", "e" => "f"} })
-      ).to eq({ "a" => "b", "c" => {"e" => "f"} })
+        subject.send(:prune!, 'a' => 'b', 'c' => {'d' => '', 'e' => 'f'})
+      ).to eq('a' => 'b', 'c' => {'e' => 'f'})
     end
   end
 end
