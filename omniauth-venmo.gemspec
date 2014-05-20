@@ -21,5 +21,4 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'dotenv'
   s.add_development_dependency 'sinatra'
-  s.add_development_dependency 'rake'
 end
