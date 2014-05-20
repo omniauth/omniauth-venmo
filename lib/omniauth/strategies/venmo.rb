@@ -7,7 +7,7 @@ module OmniAuth
 
       option :provider_ignores_state, true
       option :client_options, {
-        :site               => 'https://api.venmo.com',
+        :site               => 'https://api.venmo.com/v1',
         :authorize_url      => '/oauth/authorize',
         :token_url          => '/oauth/access_token'
       }
