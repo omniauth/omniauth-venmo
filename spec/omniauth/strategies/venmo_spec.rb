@@ -26,7 +26,7 @@ describe OmniAuth::Strategies::Venmo do
     end
 
     it 'should indicate that the provider ignores the state parameted' do
-      expect(subject.options.provider_ignores_state).to be_true
+      expect(subject.options.provider_ignores_state).to eq true
     end
   end
 
