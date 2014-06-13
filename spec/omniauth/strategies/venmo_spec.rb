@@ -14,15 +14,15 @@ describe OmniAuth::Strategies::Venmo do
     end
 
     it 'should have correct site' do
-      expect(subject.options.client_options.site).to eq('https://api.venmo.com/v1')
+      expect(subject.options.client_options.site).to eq('https://api.venmo.com')
     end
 
     it 'should have correct authorize url' do
-      expect(subject.options.client_options.authorize_url).to eq('/oauth/authorize')
+      expect(subject.options.client_options.authorize_url).to eq('/v1/oauth/authorize')
     end
 
     it 'should have correct access token url' do
-      expect(subject.options.client_options.token_url).to eq('/oauth/access_token')
+      expect(subject.options.client_options.token_url).to eq('/v1/oauth/access_token')
     end
 
     it 'should indicate that the provider ignores the state parameted' do
