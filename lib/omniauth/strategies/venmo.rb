@@ -6,9 +6,9 @@ module OmniAuth
       DEFAULT_SCOPE = 'access_profile'
 
       option :provider_ignores_state, true
-      option :client_options, :site          => 'https://api.venmo.com/v1',
-                              :authorize_url => '/oauth/authorize',
-                              :token_url     => '/oauth/access_token'
+      option :client_options, :site          => 'https://api.venmo.com',
+                              :authorize_url => '/v1/oauth/authorize',
+                              :token_url     => '/v1/oauth/access_token'
 
       uid { raw_info['id'] }
 
